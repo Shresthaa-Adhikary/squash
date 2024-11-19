@@ -14,3 +14,18 @@ print(f"*********************************************")
 print(" ")
 print("###########")
 
+def is_palindrome(s):
+    # Remove spaces and convert to lowercase
+    s = s.replace(" ", "").lower()
+    # Remove punctuation (optional)
+    s = ''.join(char for char in s if char.isalnum())
+    # Check if the string is equal to its reverse
+    return s == s[::-1]
+
+# Get user input
+user_input = input("Enter a word or phrase: ")
+if is_palindrome(user_input):
+    print(f'"{user_input}" is a palindrome.')
+else:
+    print(f'"{user_input}" is not a palindrome.')
+
